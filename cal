@@ -1,0 +1,57 @@
+[33mcommit 246794bad981b19622687f2523ec3e20a5e3ea4a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;32mfeature[m[33m)[m
+Author: Vybec <vybex9@gmail.com>
+Date:   Sat Jun 8 21:23:15 2024 +0530
+
+    Python cal added
+
+[33mcommit 261e59c37a2980eb632261b6832e1edccba89211[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Vybec <vybex9@gmail.com>
+Date:   Sat Apr 6 10:25:14 2024 +0530
+
+    jsut tested
+
+[33mcommit 67dee727a0274cfbc38fdf3a31a5b28ef32f6a07[m
+Merge: 16215ab 0f44337
+Author: Vybec <vybex9@gmail.com>
+Date:   Sat Apr 6 10:17:00 2024 +0530
+
+    Merge branch 'master' of https://github.com/vybec/waves
+
+[33mcommit 16215abe18de57388ca91dc13099dece2d33e905[m
+Author: Vybec <vybex9@gmail.com>
+Date:   Sat Apr 6 09:42:00 2024 +0530
+
+    faceook demo
+
+[33mcommit 0f44337470659dabeb48aaffdce7ec5c4da627d8[m
+Merge: 421f9c1 2995bea
+Author: vybec <160307212+vybec@users.noreply.github.com>
+Date:   Fri Mar 29 14:49:36 2024 +0530
+
+    Merge pull request #2 from vybec/web
+    
+    Web
+
+[33mcommit 2995beaa86db780f7e984a44a9def199277c4992[m[33m ([m[1;31mhub/web[m[33m, [m[1;32mweb[m[33m)[m
+Author: Vybec <vybex9@gmail.com>
+Date:   Fri Mar 29 14:20:06 2024 +0530
+
+    corrected
+
+[33mcommit 73f92d2bea15454a134e994359facca430700fe5[m[33m ([m[1;31mhub/calc[m[33m, [m[1;32mcalc[m[33m)[m
+Author: Vybec <vybex9@gmail.com>
+Date:   Fri Mar 29 13:42:08 2024 +0530
+
+    calc updated
+
+[33mcommit 421f9c1c216cb5d7c587908ab6bf5671c34590fc[m[33m ([m[1;31mhub/master[m[33m)[m
+Author: Vybec <vybex9@gmail.com>
+Date:   Fri Mar 29 13:32:44 2024 +0530
+
+    all added
+
+[33mcommit c957e2a559ef86a289d1d12ef5263785f230af5a[m
+Author: Vybec <vybex9@gmail.com>
+Date:   Fri Mar 29 13:26:07 2024 +0530
+
+    web were added
