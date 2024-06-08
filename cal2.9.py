@@ -25,7 +25,7 @@ root.title("Calculator")
 display_var = tk.StringVar()
 
 # Create the display panel (Entry widget)
-display = tk.Entry(root, textvariable=display_var, font=('Helvetica', 16),bg='grey',fg='white', bd=10, insertwidth=2, width=26, borderwidth=4)
+display = tk.Entry(root, textvariable=display_var, font=('Helvetica', 16),bg='grey',fg='white', bd=10, insertwidth=2, width=27, borderwidth=4)
 display.grid(row=0, column=0, columnspan=4)
 
 # Define the buttons
