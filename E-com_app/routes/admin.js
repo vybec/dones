@@ -37,5 +37,17 @@ router.get('/', function(req, res, next) {
 
   res.render('admin/view-products',{admin:true,products})
 });
+router.get('/add-product', function(req, res) {
+  res.render('admin/add-product');
+});
+
+router.post('/add-product', function(req, res) {
+  // Logic to add the product (e.g., save to database)
+  // For now, let's just redirect to the product listing page
+  res.redirect('/admin');
+  console.log(req.body)
+  console.log(req.files.image)
+
+});
 
 module.exports = router;
