@@ -1,53 +1,54 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const productHelpers = require('../helpers/product-helpers');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-
-  let products=[
-    {
-      name:'IPHONE 11',
-      category:'Mobile',
-      discription:'This is a great phone made by Teve Jobs',
-      image:'https://i0.wp.com/www.icareservice.in/wp-content/uploads/2020/04/iPhone-11-Back-Panel-Replacement-Yellow.jpg?fit=648%2C632&ssl=1'
-
-    },
-    {
-      name:'Nothing 2A',
-      category:'Mobile',
-      discription:'This is a great phone made by Kim',
-      image:'https://img-new.cgtrader.com/items/5138914/249964693d/large/nothing-phone-2a-3d-model-249964693d.jpg'
-
-    },
-    {
-      name:'Galaxy s23 Ultra',
-      category:'Mobile',
-      discription:'This is a great phone made by Samsung',
-      image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFFNuKBPCb8vzXc9_Ym0_webVotDaAHiqyfg&s'
-
-    },
-    {
-      name:'Red Magic',
-      category:'Mobile',
-      discription:'This is a great phone made by Red',
-      image:'https://www.giztop.com/media/catalog/product/cache/dc206057cdd42d7e34b9d36e347785ca/r/e/red_magic_9_pro_01_3.jpg'
-
-    },
-  ]
-
-  res.render('admin/view-products',{admin:true,products})
+router.get('/', async (req, res, next) => {
+  try {
+    let products = await productHelpers.getAllProducts();
+    res.render('admin/view-products', { admin: true, products });
+  } catch (err) {
+    console.error('Error fetching products:', err);
+    res.status(500).send('Error fetching products.');
+  }
 });
-router.get('/add-product', function(req, res) {
+
+router.get('/add-product', (req, res) => {
   res.render('admin/add-product');
 });
 
-router.post('/add-product', function(req, res) {
-  // Logic to add the product (e.g., save to database)
-  // For now, let's just redirect to the product listing page
-  res.redirect('/admin');
-  console.log(req.body)
-  console.log(req.files.image)
+router.post('/add-product', async (req, res) => {
+  
+  try {
+    console.log(req.body);
 
+    // Check if files are uploaded
+    if (!req.files || !req.files.Image) {
+      console.log('No file uploaded');
+      return res.status(400).send('No file uploaded.');
+    }
+
+    let image = req.files.Image;
+    console.log('File uploaded:', image);
+
+    productHelpers.addProduct(req.body, (err, id) => {
+      if (err) {
+        console.error('Error adding product:', err);
+        return res.status(500).send('Error adding product.');
+      }
+
+      let imagePath = `./public/product-images/${id}.jpg`;
+      image.mv(imagePath, (err) => {
+        if (err) {
+          console.error('File move error:', err);
+          return res.status(500).send(err);
+        }
+        res.redirect('/admin');
+      });
+    });
+  } catch (err) {
+    console.error('Error:', err);
+    res.status(500).send('Server error.');
+  }
 });
 
 module.exports = router;
